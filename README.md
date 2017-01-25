@@ -16,12 +16,6 @@ Compatible with Ionic 2.0.0-rc.0
 
 3. Set details of your app in `src/app/app.component.ts`:
 
-    backandService.setAppName('your app name');
-
-    backandService.setSignUpToken('your signup token');
-    
-    backandService.setAnonymousToken('your anonymousToken token');
-
     backand.init({
         appName: 'your app name',
         signUpToken: 'your signup token',
