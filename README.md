@@ -34,10 +34,6 @@ Compatible with Ionic 2.0.0-rc.0
 
     npm install @types/socket.io-client --save-dev --save-exact
 
-5. Include `socket.io-client` in `index.html`, above `main.js`:
-
-    <script src="node_modules/socket.io-client/dist/socket.io.min.js"></script>
-
 5. Run the app
     
     ionic serve
