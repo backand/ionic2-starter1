@@ -14,6 +14,10 @@ Compatible with Ionic 2.0.0-rc.0
 
     ionic plugin add cordova-plugin-inappbrowser
 
+3. Include dependencies in `src/index.html`, above `<script src="build/main.js"></script>`:
+
+    <script src="socket.io.min.js"></script>
+
 3. Set details of your app in `src/app/app.component.ts`:
 
     backand.init({
