@@ -6,41 +6,38 @@ Compatible with Ionic 2.2.1
 
 1. Create an Ionic app:
 
-    ionic start myApp https://github.com/backand/ionic2-starter1.git --v2
+        ionic start myApp https://github.com/backand/ionic2-starter1 --v2
     
-    cd myApp
+        cd myApp
 
 2. Install Cordova Plugins
 
-    ionic plugin add cordova-plugin-inappbrowser
+        ionic plugin add cordova-plugin-inappbrowser
 
-3. Include dependencies in `src/index.html`, above `<script src="build/main.js"></script>`:
+3. Include dependencies in `src/index.html`, above `<script src="build/main.js"></script>`: 
 
-    <script src="socket.io.min.js"></script>
+        <script src="socket.io.min.js"></script>
 
 3. Set details of your app in `src/app/app.component.ts`:
 
-    backand.init({
-        appName: 'your app name',
-        signUpToken: 'your signup token',
-        anonymousToken: 'your anonymousToken token',
-        runSocket: true,
-        isMobile: platform.is('mobile')
-    });
+			       backand.init({
+				        appName: 'your app name',
+				        signUpToken: 'your signup token',
+				        anonymousToken: 'your anonymousToken token',
+				        runSocket: true,
+				        isMobile: platform.is('mobile')
+				    });
 
 4. Install dependencies:
 
-    npm install @backand/angular2-sdk --save
-
-    npm install socket.io-client --save
-
-    npm install @types/node --save-dev --save-exact
-
-    npm install @types/socket.io-client --save-dev --save-exact
+	    npm install @backand/angular2-sdk --save
+	    npm install socket.io-client --save
+	    npm install @types/node --save-dev --save-exact
+	    npm install @types/socket.io-client --save-dev --save-exact
 
 5. Run the app
     
-    ionic serve
+        ionic serve
 
 ## CRUD
 
@@ -59,11 +56,11 @@ The app opens a dialog supplied by the social network.
 
 ## Socket Service
 
-1. To subscribe to event `items_updated` from server side via sockets, in your component do, as in `src/app/pages/crud/crud.ts`:
+To subscribe to event `items_updated` from server side via sockets, in your component do, as in `src/app/pages/crud/crud.ts`:
 
       
-    this.backand.on("items_updated",
-        (data: any) => {
-            // do something with data
-        }
-    );
+		    this.backand.on("items_updated",
+		        (data: any) => {
+		            // do something with data
+		        }
+		    );
