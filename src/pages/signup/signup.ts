@@ -24,7 +24,7 @@ export class SignupPage {
       alert('Passwords should match');
       return;
     }
-    this.backand.signup(this.email, this.signUpPassword, this.confirmPassword, this.firstName, this.lastName)
+    this.backand.signup(this.firstName, this.lastName, this.email, this.signUpPassword, this.confirmPassword)
       .then((data: any) => {
           alert('Sign up succeeded');
           this.email = this.signUpPassword = this.confirmPassword = this.firstName = this.lastName = '';
