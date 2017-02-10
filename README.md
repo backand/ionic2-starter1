@@ -18,24 +18,24 @@ Compatible with Ionic 2.2.1
 
         <script src="socket.io.min.js"></script>
 
-3. Set details of your app in `src/app/app.component.ts`:
+4. Set details of your app in `src/app/app.component.ts`:
+		
+	    backand.init({
+		  appName: 'your app name',
+			signUpToken: 'your signup token',
+			anonymousToken: 'your anonymousToken token',
+			runSocket: true,
+			isMobile: platform.is('mobile')
+		});
 
-			       backand.init({
-				        appName: 'your app name',
-				        signUpToken: 'your signup token',
-				        anonymousToken: 'your anonymousToken token',
-				        runSocket: true,
-				        isMobile: platform.is('mobile')
-				    });
-
-4. Install dependencies:
+5. Install dependencies:
 
 	    npm install @backand/angular2-sdk --save
 	    npm install socket.io-client --save
 	    npm install @types/node --save-dev --save-exact
 	    npm install @types/socket.io-client --save-dev --save-exact
 
-5. Run the app
+6. Run the app
     
         ionic serve
 
@@ -59,8 +59,8 @@ The app opens a dialog supplied by the social network.
 To subscribe to event `items_updated` from server side via sockets, in your component do, as in `src/app/pages/crud/crud.ts`:
 
       
-		    this.backand.on("items_updated",
-		        (data: any) => {
-		            // do something with data
-		        }
-		    );
+	    this.backand.on("items_updated",
+	        (data: any) => {
+	            // do something with data
+	        }
+	    );
