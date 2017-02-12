@@ -1,7 +1,6 @@
 # Backand Ionic 2 Starter
-This repository holds the Ionic 2 starter app of the [angular.io quickstart](https://angular.io/docs/ts/latest/quickstart.html),
-the foundation for most of the documentation samples and potentially a good starting point for your application.
-**NOTE: Compatible with Ionic 2.2.1**
+Create mobile application with [ionic](http://www.ionicframework.com) and [backand](http://www.backand.com).
+**NOTE: Compatible with Ionic ^2.2.1**
 
 
 ## Running the app
@@ -12,58 +11,63 @@ $ ionic start myApp https://github.com/backand/ionic2-starter1 --v2
 $ cd myApp
 ```
 
+- Install dependencies:
+```bash
+$ npm install @backand/angular2-sdk socket.io-client @types/node @types/socket.io-client
+```
+
 - Install Cordova Plugins
 ```bash
 $ ionic plugin add cordova-plugin-inappbrowser
 ```
 
-3. Include dependencies in `src/index.html`, above `<script src="build/main.js"></script>`:
+- Run the app
+```bash
+$ ionic serve
+```
 
-        <script src="socket.io.min.js"></script>
+- In order to run the app on another platform (Android/iOS):
+```bash
+$ cordova platform add <platform>
+$ ionic run <platform>
+```
 
-4. Set details of your app in `src/app/app.component.ts`:
 
-	    backand.init({
-		  appName: 'your app name',
-			signUpToken: 'your signup token',
-			anonymousToken: 'your anonymousToken token',
-			runSocket: true,
-			isMobile: platform.is('mobile')
-		});
+## Setting up your own Backand application
 
-5. Install dependencies:
+- Want to customize data model or change authorization?
+create a free personal application at [backand.com](https://www.backand.com/apps/#/sign_up)
 
-	    npm install @backand/angular2-sdk --save
-	    npm install socket.io-client --save
-	    npm install @types/node --save-dev --save-exact
-	    npm install @types/socket.io-client --save-dev --save-exact
+- Change the app's parameters (/src/app/app.component.ts) in the init function with your new app parameters:
+```javascript
+backand.init({
+  appName: 'your app name',
+  signUpToken: 'your signup token',
+  anonymousToken: 'your anonymousToken token',
+  runSocket: true,
+  mobilePlatform: 'ionic'
+});
+```
 
-6. Run the app
-
-        ionic serve
-
-## CRUD
-
+- CRUD:
 To fetch, create, and filter rows, from an object, say `stuff`, modify
 the object used in these functions in `src/pages/crud/crud.ts`:
-
-    getItems
-    filterItems
-    postItem
-
+```javascript
+getItems
+filterItems
+postItem
+```
 replacing `todo` with the name of your object, `stuff`
 
-## Social Signup
 
-The app opens a dialog supplied by the social network.
-
-## Socket Service
-
+- SOCKET:
 To subscribe to event `items_updated` from server side via sockets, in your component do, as in `src/app/pages/crud/crud.ts`:
+```javascript
+this.backand.on("items_updated",
+  (data: any) => {
+      // do something with data
+  });
+```
 
-
-	    this.backand.on("items_updated",
-	        (data: any) => {
-	            // do something with data
-	        }
-	    );
+- LOGIN:
+The app opens a dialog supplied by the social network.

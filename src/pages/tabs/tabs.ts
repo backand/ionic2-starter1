@@ -14,7 +14,5 @@ export class TabsPage {
   tab2Root: any = SignupPage;
   tab3Root: any = CrudPage;
 
-  constructor() {
-
-  }
+  constructor() {}
 }

@@ -14,10 +14,7 @@ export class SignupPage {
   signUpPassword: string = '';
   confirmPassword: string = '';
 
-  constructor(private backand: BackandService) {
-
-
-  }
+  constructor(private backand: BackandService) {}
 
   public signUp() {
     if (this.signUpPassword != this.confirmPassword){
@@ -34,27 +31,5 @@ export class SignupPage {
       }
     );
   }
-
-  // public socialSignup(provider) {
-  //   this.backand.socialSignup(provider)
-  //     .then((data: any) => {
-  //           console.log('Sign up succeeded with:' + provider);
-  //     },
-  //     (err: any) => {
-  //           console.log(err)
-  //     }
-  //   );
-  // }
-
-  // public inAppSocial(provider) {
-  //   var $obs = backand.service.inAppSocial(provider);
-  //   $obs.subscribe(
-  //       data => {
-  //           console.log('Sign up succeeded with:' + provider);
-  //       },
-  //       err => {
-  //           backand.service.logError(err)
-  //       },
-  //       () => console.log('Finish Auth'));
-  // }
+  
 }
