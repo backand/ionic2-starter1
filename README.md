@@ -1,25 +1,28 @@
 # Backand Ionic 2 Starter
+This repository holds the Ionic 2 starter app of the [angular.io quickstart](https://angular.io/docs/ts/latest/quickstart.html),
+the foundation for most of the documentation samples and potentially a good starting point for your application.
+**NOTE: Compatible with Ionic 2.2.1**
 
-Compatible with Ionic 2.2.1
 
-## Running the app 
+## Running the app
 
-1. Create an Ionic app:
+- Create an Ionic app:
+```bash
+$ ionic start myApp https://github.com/backand/ionic2-starter1 --v2    
+$ cd myApp
+```
 
-        ionic start myApp https://github.com/backand/ionic2-starter1 --v2
-    
-        cd myApp
+- Install Cordova Plugins
+```bash
+$ ionic plugin add cordova-plugin-inappbrowser
+```
 
-2. Install Cordova Plugins
-
-        ionic plugin add cordova-plugin-inappbrowser
-
-3. Include dependencies in `src/index.html`, above `<script src="build/main.js"></script>`: 
+3. Include dependencies in `src/index.html`, above `<script src="build/main.js"></script>`:
 
         <script src="socket.io.min.js"></script>
 
 4. Set details of your app in `src/app/app.component.ts`:
-		
+
 	    backand.init({
 		  appName: 'your app name',
 			signUpToken: 'your signup token',
@@ -36,12 +39,12 @@ Compatible with Ionic 2.2.1
 	    npm install @types/socket.io-client --save-dev --save-exact
 
 6. Run the app
-    
+
         ionic serve
 
 ## CRUD
 
-To fetch, create, and filter rows, from an object, say `stuff`, modify 
+To fetch, create, and filter rows, from an object, say `stuff`, modify
 the object used in these functions in `src/pages/crud/crud.ts`:
 
     getItems
@@ -50,15 +53,15 @@ the object used in these functions in `src/pages/crud/crud.ts`:
 
 replacing `todo` with the name of your object, `stuff`
 
-## Social Signup 
+## Social Signup
 
-The app opens a dialog supplied by the social network. 
+The app opens a dialog supplied by the social network.
 
 ## Socket Service
 
 To subscribe to event `items_updated` from server side via sockets, in your component do, as in `src/app/pages/crud/crud.ts`:
 
-      
+
 	    this.backand.on("items_updated",
 	        (data: any) => {
 	            // do something with data
