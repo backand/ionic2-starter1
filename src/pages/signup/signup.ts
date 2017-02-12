@@ -22,14 +22,14 @@ export class SignupPage {
       return;
     }
     this.backand.signup(this.firstName, this.lastName, this.email, this.signUpPassword, this.confirmPassword)
-      .then((data: any) => {
+      .then((res: any) => {
           alert('Sign up succeeded');
           this.email = this.signUpPassword = this.confirmPassword = this.firstName = this.lastName = '';
       },
       (err: any) => {
-          console.log(err)
+        alert(err.data)
       }
     );
   }
-  
+
 }

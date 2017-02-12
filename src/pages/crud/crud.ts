@@ -16,9 +16,8 @@ export class CrudPage {
     this.searchQuery = '';
     let that = this;
     this.backand.on("items_updated",
-      (data: any) => {
-        console.log("items_updated", data);
-        let a = data as any[];
+      (res: any) => {
+        let a = res.data as any[];
         let newItem = {};
         a.forEach((kv)=> newItem[kv.Key] = kv.Value);
         that.items.unshift(newItem);
@@ -32,28 +31,27 @@ export class CrudPage {
       description: this.description
     };
 
-    this.backand.object.create('todo', item)
-      .then((data: any) => {
+    if (item.name && item.description) {
+      this.backand.object.create('todo', item)
+      .then((res: any) => {
         // add to beginning of array
         this.items.unshift({ id: null, name: this.name, description: this.description });
-        console.log(this.items);
         this.name = '';
         this.description = '';
       },
       (err: any) => {
-        console.log(err);
+        alert(err.data);
       });
+    }
   }
 
   public getItems() {
    this.backand.object.getList('todo')
-    .then((data: any) => {
-      console.log(data);
-      this.items = data.data;
+    .then((res: any) => {
+      this.items = res.data;
     },
     (err: any) => {
-      console.log(err);
-      this.items = [{ name: 'yoram', 'description': 'sssss' }];
+      alert(err.data);
     });
   }
 
@@ -77,12 +75,11 @@ export class CrudPage {
     }
 
     this.backand.object.getList('todo', params)
-    .then((data: any) => {
-      console.log(data);
-      this.items = data.data;
+    .then((res: any) => {
+      this.items = res.data;
     },
     (err: any) => {
-      console.log(err)
+      alert(err.data);
     });
   }
 
