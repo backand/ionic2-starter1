@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { IonicApp, IonicModule } from 'ionic-angular';
 import io from 'socket.io-client';
+window["io"] = io;
 
 import { MyApp } from './app.component';
 import { LoginPage } from '../pages/login/login';

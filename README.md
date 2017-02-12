@@ -13,7 +13,7 @@ $ cd myApp
 
 - Install dependencies:
 ```bash
-$ npm install @backand/angular2-sdk socket.io-client @types/node @types/socket.io-client
+$ npm i -S @backand/angular2-sdk socket.io-client @types/node @types/socket.io-client
 ```
 
 - Install Cordova Plugins
@@ -49,25 +49,5 @@ backand.init({
 });
 ```
 
-- CRUD:
-To fetch, create, and filter rows, from an object, say `stuff`, modify
-the object used in these functions in `src/pages/crud/crud.ts`:
-```javascript
-getItems
-filterItems
-postItem
-```
-replacing `todo` with the name of your object, `stuff`
-
-
-- SOCKET:
-To subscribe to event `items_updated` from server side via sockets, in your component do, as in `src/app/pages/crud/crud.ts`:
-```javascript
-this.backand.on("items_updated",
-  (data: any) => {
-      // do something with data
-  });
-```
-
-- LOGIN:
-The app opens a dialog supplied by the social network.
+- delete crud, login, signup tabs and start writing your app.
+you may want to review the full API of our [angular2-sdk](https://github.com/backand/angular2-sdk).
