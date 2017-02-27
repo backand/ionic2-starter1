@@ -17,7 +17,7 @@ export class CrudPage {
     let that = this;
     this.backand.on("items_updated",
       (res: any) => {
-        let a = res.data as any[];
+        let a = res as any[];
         let newItem = {};
         a.forEach((kv)=> newItem[kv.Key] = kv.Value);
         that.items.unshift(newItem);
