@@ -1,6 +1,6 @@
 # Backand Ionic 2 Starter
-Create mobile application with [ionic](http://www.ionicframework.com) and [backand](http://www.backand.com).
-**NOTE: Compatible with Ionic ^2.2.1**
+Create a mobile application with [ionic](http://www.ionicframework.com) and [backand](http://www.backand.com).
+**NOTE: Compatible with Ionic 2.2.1**
 
 
 ## Running the app
@@ -34,9 +34,9 @@ $ ionic run <platform>
 
 
 ## Setting up your own Backand application
+If you want to customize the data model, or change how authentication takes place, follow these steps:
 
-- Want to customize data model or change authorization?
-create a free personal application at [backand.com](https://www.backand.com/apps/#/sign_up)
+- Create a free personal application at [backand.com](https://www.backand.com/apps/#/sign_up)
 
 - Change the app's parameters (/src/app/app.component.ts) in the init function with your new app parameters:
 ```javascript
@@ -49,5 +49,6 @@ backand.init({
 });
 ```
 
-- delete crud, login, signup tabs and start writing your app.
-you may want to review the full API of our [angular2-sdk](https://github.com/backand/angular2-sdk).
+- Delete the starter content, and begin writing your app!
+
+Review our Angular 2 SDK to get started - [angular2-sdk](https://github.com/backand/angular2-sdk).
