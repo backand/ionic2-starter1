@@ -1,5 +1,6 @@
-import { NgModule } from '@angular/core';
-import { IonicApp, IonicModule } from 'ionic-angular';
+import { NgModule, ErrorHandler } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import io from 'socket.io-client';
 window["io"] = io;
 
@@ -11,6 +12,9 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { BackandService } from '@backand/angular2-sdk';
 
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -20,6 +24,7 @@ import { BackandService } from '@backand/angular2-sdk';
     TabsPage
   ],
   imports: [
+    BrowserModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [ IonicApp ],
@@ -30,6 +35,11 @@ import { BackandService } from '@backand/angular2-sdk';
     CrudPage,
     TabsPage
   ],
-  providers: [ BackandService ]
+  providers: [ 
+    StatusBar,
+    SplashScreen,
+    BackandService, 
+    {provide: ErrorHandler, useClass: IonicErrorHandler} 
+  ]
 })
 export class AppModule {}

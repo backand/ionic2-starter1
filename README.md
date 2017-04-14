@@ -1,6 +1,6 @@
 # Backand Ionic 2 Starter
 Create a mobile application with [ionic](http://www.ionicframework.com) and [backand](http://www.backand.com).
-**NOTE: Compatible with Ionic 2.2.1**
+**NOTE: Compatible with Ionic 3.0.o**
 
 
 ## Running the app
