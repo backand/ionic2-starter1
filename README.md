@@ -1,24 +1,29 @@
 # Backand Ionic 2 Starter
 Create a mobile application with [ionic](http://www.ionicframework.com) and [backand](http://www.backand.com).
-**NOTE: Compatible with Ionic 3.0.o**
+**NOTE: Compatible with Ionic 3.1.2**
 
+Due to recent changes of Ionic CLI it does no support creating an app from a GitHub repo. Hence, you will need to clone or download these starter and use the `src` and `www` folder.
 
 ## Running the app
 
 - Create an Ionic app:
 ```bash
-$ ionic start myApp https://github.com/backand/ionic2-starter1 --v2    
-$ cd myApp
+$ ionic start mynewapp blank
+$ cd mynewapp
 ```
+
+- Replace folders from this starter:
+1. `src`
+2. `www`
 
 - Install dependencies:
 ```bash
-$ npm i -S @backand/angular2-sdk socket.io-client @types/node @types/socket.io-client ionic-native
+$ npm i -S @backand/angular2-sdk socket.io-client @types/node @types socket.io-client ionic-native
 ```
 
 - Install Cordova Plugins
 ```bash
-$ ionic plugin add cordova-plugin-inappbrowser
+$ ionic cordova plugin add cordova-plugin-inappbrowser
 ```
 
 - Run the app
@@ -28,8 +33,8 @@ $ ionic serve
 
 - In order to run the app on another platform (Android/iOS):
 ```bash
-$ cordova platform add <platform>
-$ ionic run <platform>
+$ ionic cordova platform add <platform>
+$ ionic cordova run <platform>
 ```
 
 
