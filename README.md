@@ -2,7 +2,7 @@
 Create a mobile application with [ionic](http://www.ionicframework.com) and [backand](http://www.backand.com).
 **NOTE: Compatible with Ionic 3.1.2**
 
-Due to recent changes of Ionic CLI it does no support creating an app from a GitHub repo. Hence, you will need to clone or download these starter and use the `src` and `www` folder.
+Due to recent changes of Ionic CLI it does no support creating an app from a GitHub repo. Hence, you will need to clone or download these starter and use the `src` and `www` folderd.
 
 ## Running the app
 
