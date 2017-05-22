@@ -15,6 +15,15 @@ import { BackandService } from '@backand/angular2-sdk';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+
+// In App Login only
+import { GooglePlus } from '@ionic-native/google-plus';
+
+import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook';
+
+// Facebook login for Ionic web shared in Facebook
+import { FacebookModule } from 'ngx-facebook';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -25,7 +34,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    FacebookModule.forRoot()
   ],
   bootstrap: [ IonicApp ],
   entryComponents: [
@@ -39,7 +49,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     StatusBar,
     SplashScreen,
     BackandService, 
-    {provide: ErrorHandler, useClass: IonicErrorHandler} 
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    GooglePlus,
+    Facebook
   ]
 })
 export class AppModule {}

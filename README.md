@@ -57,3 +57,35 @@ backand.init({
 - Delete the starter content, and begin writing your app!
 
 Review our Angular 2 SDK to get started - [angular2-sdk](https://github.com/backand/angular2-sdk).
+
+# In App Social Login 
+
+In App social login is intended to use the native social SDK of Faceboook or Google. For Google this is due to recent restrictions in Google that prevent using the Signup with Google through web views. 
+
+In the `signup` screen we label this functionality as **In App Social**
+
+## Google 
+
+Install [Ionic Native Google Plus plugin](https://ionicframework.com/docs/native/google-plus/)
+
+## Facebook
+
+Install [Ionic Native Facebook plugin](https://ionicframework.com/docs/native/facebook/)
+
+# Ionic Web App for Facebook Sharing
+
+When an Ionic web app is shared in Facebook feed, the usual Backand social signup with Facebook will not work. 
+
+1. Detect this case in your code with:
+
+    function isFacebookApp() {
+       var ua = navigator.userAgent || navigator.vendor || window.opera;
+       return (ua.indexOf("FBAN") > -1) || (ua.indexOf("FBAV") > -1);
+    }
+
+2. Install `ngx-facebook`:
+
+    npm install ngx-facebook --save
+
+3. Use the code labeled **Social Web** in `signup` screen.
+

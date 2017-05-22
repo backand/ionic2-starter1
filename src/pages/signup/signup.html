@@ -35,11 +35,27 @@
         <button ion-button (click)="signUp()" color="success">Sign Up</button>
 
     </ion-list>
-    <!-- <h3>In App Social</h3>
+    
+    <h3>In App Social</h3>
     <div class="button-bar">
         <button ion-button class="icon-left ion-social-facebook" color="positive" (click)="inAppSocial('facebook')" type="button">
             <ion-icon name="logo-facebook"></ion-icon>
             Facebook
         </button>
-    </div> -->
+    </div>
+
+    <div class="button-bar">
+        <button ion-button class="icon-left ion-social-googleplus" color="positive" (click)="inAppSocial('google')" type="button">
+            <ion-icon name="logo-google"></ion-icon>
+            Google
+        </button>
+    </div>
+
+    <h3>Social Browser</h3>
+    <div class="button-bar">
+        <button ion-button class="icon-left ion-social-facebook" color="positive" (click)="socialWeb('facebook')" type="button">
+            <ion-icon name="logo-facebook"></ion-icon>
+            Facebook
+        </button>
+    </div>
 </ion-content>
