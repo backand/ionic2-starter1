@@ -18,7 +18,7 @@ $ cd mynewapp
 
 - Install dependencies:
 ```bash
-$ npm i -S @backand/angular2-sdk socket.io-client @types/node @types socket.io-client ionic-native
+$ npm i -S @backand/angular2-sdk socket.io-client @types/node @types/socket.io-client ionic-native
 ```
 
 - Install Cordova Plugins
