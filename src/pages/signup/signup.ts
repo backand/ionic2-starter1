@@ -16,6 +16,7 @@ export class SignupPage {
   lastName:string = '';
   signUpPassword: string = '';
   confirmPassword: string = '';
+  userData: any = {};
 
   constructor(private backand: BackandService, private googlePlus: GooglePlus, private fb: Facebook, private fbWeb: FacebookService) {
     console.log('signup');
